@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern City Apartment | HomeNest Realty</title>
+  <meta name="description" content="A modern apartment designed around convenient city living, with a bright interior and a private balcony.">
+  <style>
+    :root { --ink:#263238; --muted:#68757a; --accent:#9a7656; --cream:#f7f4ef; --line:#e8e1d8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
+    a { color:inherit; }
+    .container { width:min(1100px, calc(100% - 40px)); margin:auto; }
+    header { border-bottom:1px solid var(--line); background:#fff; }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-size:22px; font-weight:700; letter-spacing:.2px; text-decoration:none; }
+    .brand span { color:var(--accent); }
+    nav { display:flex; gap:24px; flex-wrap:wrap; }
+    nav a { text-decoration:none; color:var(--muted); font-size:14px; }
+    .back { display:inline-block; margin:28px 0 18px; color:var(--accent); text-decoration:none; font-weight:700; }
+    .layout { display:grid; grid-template-columns:1.35fr .8fr; gap:42px; align-items:start; padding-bottom:70px; }
+    .hero-img { width:100%; height:470px; object-fit:cover; border-radius:14px; display:block; background:var(--cream); }
+    h1 { font-size:clamp(30px,4vw,42px); line-height:1.15; margin:0 0 10px; }
+    .location { color:var(--muted); margin-bottom:22px; }
+    .price { font-size:30px; font-weight:700; color:var(--accent); margin:22px 0 12px; }
+    .facts { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 28px; }
+    .facts span { background:var(--cream); padding:9px 13px; border-radius:7px; font-size:14px; }
+    .panel { border:1px solid var(--line); border-radius:14px; padding:26px; position:sticky; top:20px; }
+    h2 { font-size:21px; margin:0 0 12px; }
+    .panel ul { padding-left:20px; color:var(--muted); }
+    .button { display:block; text-align:center; background:var(--accent); color:#fff; text-decoration:none; padding:14px 18px; border-radius:7px; font-weight:700; margin-top:22px; }
+    .note { color:var(--muted); font-size:13px; margin-top:12px; }
+    .description { color:#536168; max-width:720px; }
+    footer { background:var(--cream); padding:24px 0; color:var(--muted); font-size:13px; }
+    @media(max-width:760px) { .nav { align-items:flex-start; flex-direction:column; padding:18px 0; } nav { gap:14px; } .layout { grid-template-columns:1fr; gap:25px; } .hero-img { height:300px; } .panel { position:static; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">HomeNest <span>Realty</span></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#properties">Properties</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back" href="index.html#properties">← Back to all properties</a>
+    <div class="layout">
+      <section>
+        <img class="hero-img" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Bright modern apartment interior">
+        <div class="price">$245,000</div>
+        <h1>Modern City Apartment</h1>
+        <div class="location">Columbus, Ohio · Property P002</div>
+        <div class="facts">
+          <span>2 Bedrooms</span><span>2 Bathrooms</span><span>Balcony</span>
+        </div>
+        <h2>About this property</h2>
+        <p class="description">A modern apartment designed around convenient city living, with a bright interior and a private balcony.</p>
+      </section>
+
+      <aside class="panel">
+        <h2>Property highlights</h2>
+        <ul><li>Two bedrooms</li>
+<li>Two bathrooms</li>
+<li>Private balcony</li>
+<li>Contemporary interior</li></ul>
+        <a class="button" href="enquiry.html?property=P002">Enquire about this property</a>
+        <p class="note">This is a sample demonstration listing. Property details and prices are illustrative.</p>
+      </aside>
+    </div>
+
+    <section id="enquiry" style="padding:10px 0 55px; max-width:720px;">
+      <h2>Interested in this property?</h2>
+      <p class="description">The enquiry form will be connected in the next setup step. For now, this page confirms the property details and its unique ID: <strong>P002</strong>.</p>
+    </section>
+  </main>
+  <footer><div class="container">© 2026 HomeNest Realty · Sample demonstration website</div></footer>
+</body>
+</html>

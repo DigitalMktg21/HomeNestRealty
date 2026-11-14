@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Property Enquiry | HomeNest Realty</title>
+
+<style>
+:root {
+  --ink: #263238;
+  --muted: #68757a;
+  --accent: #9a7656;
+  --cream: #f7f4ef;
+  --line: #e8e1d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1000px, calc(100% - 40px));
+  margin: auto;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main {
+  padding: 45px 0 70px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-card {
+  max-width: 650px;
+  margin: auto;
+  padding: 38px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(38,50,56,.06);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 7px 0;
+  font-size: 36px;
+}
+
+.intro {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.property-box {
+  margin-bottom: 27px;
+  padding: 16px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.property-label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.property-name {
+  font-weight: bold;
+}
+
+.property-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d8d2ca;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 15px;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid rgba(154,118,86,.22);
+  border-color: var(--accent);
+}
+
+textarea {
+  min-height: 135px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 7px;
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #806044;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.notice {
+  display: none;
+  margin-top: 18px;
+  padding: 14px;
+  background: var(--cream);
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+footer {
+  background: white;
+  padding: 23px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px 0;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .form-card {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a class="brand" href="index.html">
+      HomeNest <span>Realty</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#properties">Properties</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact Us</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="container">
+
+  <a class="back" id="backLink" href="index.html#properties">
+    ← Back to properties
+  </a>
+
+  <section class="form-card">
+
+    <div class="eyebrow">HomeNest Realty</div>
+
+    <h1>Property Enquiry</h1>
+
+    <p class="intro">
+      Interested in this property?
+      Send us a message and our team will follow up.
+    </p>
+
+    <div class="property-box">
+
+      <span class="property-label">
+        You're enquiring about
+      </span>
+
+      <div class="property-name" id="propertyName">
+        Loading property...
+      </div>
+
+      <div class="property-meta" id="propertyMeta"></div>
+
+    </div>
+
+    <form id="enquiryForm"
+      action="http://localhost:5678/webhook-test/homenest-enquiry"
+      method="POST">
+
+      <!-- Automatically populated property ID -->
+      <input
+        type="hidden"
+        id="propertyId"
+        name="propertyId"
+      >
+
+      <div class="field">
+
+        <label for="name">Name</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label for="email">Email Address</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email address"
+          required
+        >
+
+      </div>
+
+      <div class="field">
+
+        <label for="message">Message / Enquiry</label>
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="What would you like to know about this property?"
+          required
+        ></textarea>
+
+      </div>
+
+      <button type="submit" id="submitButton">
+        Send Enquiry
+      </button>
+
+      <div class="notice" id="notice" role="status" style="display:none;">
+</div>
+
+      <p class="small-note">
+        Your selected property is identified automatically.
+        You do not need to enter a property ID.
+      </p>
+
+    </form>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 HomeNest Realty · Sample demonstration website
+  </div>
+</footer>
+
+
+<script>
+
+// Property information
+const properties = {
+
+  P001: {
+    name: "Family Home with Garden",
+    price: "$320,000",
+    location: "Columbus, Ohio"
+  },
+
+  P002: {
+    name: "Modern City Apartment",
+    price: "$245,000",
+    location: "Columbus, Ohio"
+  },
+
+  P003: {
+    name: "Spacious Suburban House",
+    price: "$410,000",
+    location: "Columbus, Ohio"
+  },
+
+  P004: {
+    name: "Contemporary Open-Plan Home",
+    price: "$365,000",
+    location: "Dublin, Ohio"
+  },
+
+  P005: {
+    name: "Updated Townhouse",
+    price: "$289,000",
+    location: "Westerville, Ohio"
+  },
+
+  P006: {
+    name: "Elegant Executive Residence",
+    price: "$435,000",
+    location: "Powell, Ohio"
+  }
+
+};
+
+
+// Read property ID from URL
+const params = new URLSearchParams(
+  window.location.search
+);
+
+const propertyId = (
+  params.get("property") || ""
+).toUpperCase();
+
+const property = properties[propertyId];
+
+
+// Display selected property
+if (property) {
+
+  document.getElementById("propertyName").textContent =
+    property.name;
+
+  document.getElementById("propertyMeta").textContent =
+    property.location + " | " +
+    property.price + " | ID: " + propertyId;
+
+  document.getElementById("propertyId").value =
+    propertyId;
+
+  document.getElementById("backLink").href =
+    "property-" + propertyId.toLowerCase() + ".html";
+
+} else {
+
+  document.getElementById("propertyName").textContent =
+    "Property not recognised";
+
+  document.getElementById("propertyMeta").textContent =
+    "Please return to the homepage and select a property.";
+
+  document.getElementById("submitButton").disabled = true;
+
+}
+
+
+// Send enquiry to n8n
+document.getElementById("enquiryForm")
+.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  if (!property) return;
+
+  const form = event.target;
+  const button = document.getElementById("submitButton");
+  const notice = document.getElementById("notice");
+
+  button.disabled = true;
+  button.textContent = "Sending...";
+
+  const formData = new FormData(form);
+
+  // Include selected property information
+  formData.set("propertyId", propertyId);
+  formData.set("propertyName", property.name);
+  formData.set("propertyPrice", property.price);
+  formData.set("propertyLocation", property.location);
+
+  const enquiryData = new URLSearchParams(formData);
+
+  try {
+
+    const response = await fetch(
+      "http://localhost:5678/webhook-test/homenest-enquiry",
+      {
+        method: "POST",
+        body: enquiryData
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Webhook request failed");
+    }
+
+    notice.textContent =
+      "Thank you! Your property enquiry has been submitted successfully.";
+
+    notice.style.display = "block";
+
+    form.reset();
+
+  } catch (error) {
+
+    notice.textContent =
+      "Unable to submit your enquiry. Please try again.";
+
+    notice.style.display = "block";
+
+    console.error("Enquiry submission error:", error);
+
+  } finally {
+
+    button.disabled = false;
+    button.textContent = "Send Enquiry";
+
+  }
+
+});
+
+</script>
+
+
+</body>
+</html>
